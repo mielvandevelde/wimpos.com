@@ -1,0 +1,56 @@
+---
+title: Page Not Found
+permalink: 404.html
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} - Wim Tilkin</title>
+
+    <!-- DNS PREFETCH -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+    <link rel="dns-prefetch" href="https://unpkg.com/" />
+
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.png" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Cardo:400,400i,700|Oswald:700&display=swap"
+      media="screen"
+    />
+    <link rel="stylesheet" href="/css/main.css" media="screen" />
+  </head>
+  <body>
+    <div class="container">
+      {% include "header.njk" %}
+      <main>
+        <article>
+          <header>
+            <h1>{{ title }}</h1>
+          </header>
+          <div>
+            <p>Apologies, but the page you requested could not be found &hellip;</p>
+            <ol>
+              <li>
+                If you typed in a URL &hellip; make sure the spelling, cApitALiZaTiOn, and punctuation are correct. Then try reloading the
+                page.
+              </li>
+              <li>
+                Start over again at our <a href="/" title="{{ site.title }}">homepage</a> (and please contact us to say what went wrong, so
+                we can fix it).
+              </li>
+            </ol>
+          </div>
+        </article>
+      </main>
+      {% include "footer.njk" %}
+    </div>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+---
+layout: layouts/default.njk
+title: Portfolio
+description: This is the online portfolio of Wim Tilkin. Here you will find a large selection of illustrations, animations, stories, and concept art
+eleventyNavigation:
+  key: Portfolio
+  order: 1
+---
+
+<p class="text-center">Click on the categories below to filter</p>
+
+<ul class="categories">
+  <li>
+    <a href="#" data-filter="*" class="selected">Show all</a>
+  </li>
+  {% for category in collections.categories %}
+  <li>
+    <a href="#" data-filter=".{{ category | slug }}">{{ category }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+<div class="grid">
+  {% for art in collections.portfolio | shuffle %}
+  <article class="thumbs {{ art.data.category | slug }}">
+    <a href="{{ art.url }}" title="{{ art.data.title }}">
+      <img src="{{ art.data.thumb }}" alt="{{ art.data.title }}" />
+    </a>
+  </article>
+  {% endfor %}
+</div>

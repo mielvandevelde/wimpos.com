@@ -1,0 +1,35 @@
+---
+layout: layouts/home.njk
+title: "The official website of Wim Tilkin: Illustrator, animator, story and concept artist"
+description: Welcome to the official website of Wim Tilkin. I'm an illustrator, animator, story and concept artist with more than 20 years of experience
+eleventyNavigation:
+  key: Home
+  order: 0
+---
+
+<ul class="top-large-thumbs">
+  {% for art in collections.portfolio | shuffle | limit(3) %}
+  <li class="thumbs">
+    <a href="{{ art.url }}" title="{{ art.data.title }}">
+      <img src="{{ art.data.thumb }}" alt="{{ art.data.title }}" />
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% set class="home" %}
+{% include "header.njk" %}
+
+<main>
+  <article>
+    <ul class="bottom-small-thumbs">
+      {% for art in collections.portfolio | shuffle | limit(12) %}
+      <li class="thumbs">
+        <a href="{{ art.url }}" title="{{ art.data.title }}">
+          <img src="{{ art.data.thumb }}" alt="{{ art.data.title }}" />
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </article>
+</main>

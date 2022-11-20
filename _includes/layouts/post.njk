@@ -1,0 +1,25 @@
+---
+layout: layouts/default.njk
+---
+
+<ul class="portfolio-navigation">
+  <li>
+    {% set previousPost = collections.portfolio | getPreviousCollectionItem(page) %}
+    {% if previousPost %}
+    <a href="{{ previousPost.url }}" rel="prev">&laquo; previous</a>
+    {% endif %}
+  </li>
+  <li class="text-center">
+    <a href="/portfolio/">Back to Portfolio</a>
+  </li>
+  <li class="text-right">
+    {% set nextPost = collections.portfolio | getNextCollectionItem(page) %}
+    {% if nextPost %}
+    <a href="{{ nextPost.url }}" rel="next">next &raquo;</a>
+    {% endif %}
+  </li>
+</ul>
+
+<div class="text-center">
+  {{ content | safe }}
+</div>

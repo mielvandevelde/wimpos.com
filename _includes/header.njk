@@ -1,0 +1,12 @@
+<header class="header {{ class }}">
+  <div class="person">
+    <a href="/" id="home">{{ site.name }}</a>
+    <p id="description">{{ site.description }}</p>
+  </div>
+  <nav>
+    {% set navPages = collections.all | eleventyNavigation %}
+    {% for entry in navPages %}
+      <a href="{{ entry.url }}" {% if entry.url == page.url %}class="active"{% endif %}>{{ entry.title }}</a>
+    {% endfor %}
+  </nav>
+</header>
